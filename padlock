@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Virtual Padlock</title>
+    <style>
+        .padlock {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .input-code {
+            font-size: 24px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        .unlock-btn {
+            font-size: 24px;
+            padding: 10px;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 24px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="padlock">
+        <h1>Enter the Combination</h1>
+        <input type="text" id="code" class="input-code" maxlength="4">
+        <button onclick="unlock()" class="unlock-btn">Unlock</button>
+        <div id="message" class="message"></div>
+    </div>
+    <script>
+        function unlock() {
+            var code = document.getElementById("code").value;
+            if (code === "BIRD") {
+                document.getElementById("message").innerHTML = "Unlocked! Success!";
+            } else {
+                document.getElementById("message").innerHTML = "Incorrect code. Try again.";
+            }
+        }
+    </script>
+</body>
+</html>
